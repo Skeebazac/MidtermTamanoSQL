@@ -24,20 +24,14 @@ public class AddProduct extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(txtAddProductName.getText().toString().equals("") || txtAddProductDesc.getText().toString().equals("") || txtAddProductQty.getText().toString().equals("") || txtAddProductPrice.getText().toString().equals("")) {
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Please Complete All Fields!",
-                            Toast.LENGTH_SHORT);
-                    toast.show();
+                    Toast.makeText(AddProduct.this, "Please Complete All Fields!", Toast.LENGTH_SHORT).show();
                 } else {
                     String productName = txtAddProductName.getText().toString();
                     String productDesc = txtAddProductDesc.getText().toString();
                     int productQty = Integer.parseInt(txtAddProductQty.getText().toString());
                     double productPrice = Double.parseDouble(txtAddProductPrice.getText().toString());
                     db.addProduct(productName,productDesc,productPrice,productQty);
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Product Added!",
-                            Toast.LENGTH_SHORT);
-                    toast.show();
+                    Toast.makeText(AddProduct.this, "Product Added!", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AddProduct.this, ProductInformation.class);
                     startActivity(intent);
                     finish();

@@ -28,10 +28,7 @@ public class EditProduct extends AppCompatActivity {
                     Toast.makeText(EditProduct.this, "Invalid Input Please Complete All Fields!", Toast.LENGTH_LONG).show();
                 } else {
                     db.updateData(editTextProductID.getText().toString(), editTextProductName.getText().toString(), editTextProductDesc.getText().toString(), editTextProductPrice.getText().toString(), editTextProductQty.getText().toString());
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            "Update Complete!",
-                            Toast.LENGTH_SHORT);
-                    toast.show();
+                    Toast.makeText(EditProduct.this, "Update Complete!", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(EditProduct.this, ProductInformation.class);
                     startActivity(intent);
                     finish();

@@ -53,8 +53,8 @@ public class ViewProduct extends AppCompatActivity {
                 viewTxtProductID.setText(data.getString(0));
                 viewTxtProductName.setText(data.getString(1));
                 viewTxtProductDesc.setText(data.getString(2));
-                iewTxtProductQty.setText(data.getString(3));
-                viewTxtProductPrice.setText(data.getString(4));
+                viewTxtProductPrice.setText(data.getString(3));
+                iewTxtProductQty.setText(data.getString(4));
             }
         }
 

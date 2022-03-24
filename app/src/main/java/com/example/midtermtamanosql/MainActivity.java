@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 db.deleteAllData();
+                                Toast.makeText(MainActivity.this,"Data Successfully Cleared!",Toast.LENGTH_LONG).show();
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override

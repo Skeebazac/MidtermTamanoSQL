@@ -63,7 +63,7 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
                     //set title
                     .setTitle("Confirm Delete")
                     //set message
-                    .setMessage("Do you want to delete this product?")
+                    .setMessage("Do you want to remove this product?")
                     //set positive button
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
@@ -71,6 +71,7 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
                             MyDatabaseHelper db = new MyDatabaseHelper(itemView.getContext());
                             db.deleteRow(productList.get(position).getProductID());
                             productList.remove(position);
+                            Toast.makeText(itemView.getContext(),"Successfully  removed!",Toast.LENGTH_LONG).show();
                             notifyDataSetChanged();
                         }
                     }).setNegativeButton("No", new DialogInterface.OnClickListener() {
