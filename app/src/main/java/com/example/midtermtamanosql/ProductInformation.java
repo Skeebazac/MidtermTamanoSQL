@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class ProductInformation extends AppCompatActivity {
     private ArrayList<Product> productArrayList;
-    private RecyclerView studentRecyclerView;
+    private RecyclerView productRecyclerView;
     private ImageButton backImageButton, addStudentButton, searchButton;
     private TextInputEditText txtSearch;
     MyDatabaseHelper db = new MyDatabaseHelper(this);
@@ -31,7 +31,7 @@ public class ProductInformation extends AppCompatActivity {
         ProductRecyclerAdapter adapter = new ProductRecyclerAdapter(productArrayList);
         initialize();
         setAdapter();
-        addStudentItems();
+        addProductItems();
 
         backImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,13 +58,16 @@ public class ProductInformation extends AppCompatActivity {
                 productArrayList.clear();
                 if(txtSearch.getText().toString().equals("")) {
                     Toast.makeText(ProductInformation.this, "No Result Found!", Toast.LENGTH_SHORT).show();
-                    addStudentItems();
+                    addProductItems();
                     setAdapter();
                 }
                 else {
                     Cursor data = db.getdata();
                     if(data.getCount()==0){
                         Toast.makeText(ProductInformation.this, "No Result Found!", Toast.LENGTH_SHORT).show();
+                        productArrayList.clear();
+                        addProductItems();
+                        setAdapter();
                     }
                     while(data.moveToNext()){
                         if(txtSearch.getText().toString().equals(data.getString(0))) {
@@ -73,12 +76,14 @@ public class ProductInformation extends AppCompatActivity {
                             result = true;
                         }
                     }
-                }
-                if(result) {
-                    Toast.makeText(ProductInformation.this, "Result Found!", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(ProductInformation.this, "No Result Found", Toast.LENGTH_SHORT).show();
+                    if(result) {
+                        Toast.makeText(ProductInformation.this, "Result Found!", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(ProductInformation.this, "No Result Found!", Toast.LENGTH_SHORT).show();
+                        productArrayList.clear();
+                        setAdapter();
+                    }
                 }
             }
         });
@@ -87,13 +92,13 @@ public class ProductInformation extends AppCompatActivity {
     public void setAdapter() {
         ProductRecyclerAdapter adapter = new ProductRecyclerAdapter(productArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        studentRecyclerView.setLayoutManager(layoutManager);
-        studentRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        studentRecyclerView.setAdapter(adapter);
-        studentRecyclerView.setHasFixedSize(true);
+        productRecyclerView.setLayoutManager(layoutManager);
+        productRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        productRecyclerView.setAdapter(adapter);
+        productRecyclerView.setHasFixedSize(true);
     }
 
-    public void addStudentItems() {
+    public void addProductItems() {
         Cursor data = db.getdata();
         if(data.getCount()==0){
             Toast.makeText(ProductInformation.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
@@ -107,7 +112,7 @@ public class ProductInformation extends AppCompatActivity {
     public void initialize() {
         backImageButton = findViewById(R.id.backImageButton);
         addStudentButton = findViewById(R.id.addStudentButton);
-        studentRecyclerView = findViewById(R.id.studentRecyclerView);
+        productRecyclerView = findViewById(R.id.studentRecyclerView);
         searchButton = findViewById(R.id.searchInfoButton);
         txtSearch = findViewById(R.id.txtInfoSearch);
     }

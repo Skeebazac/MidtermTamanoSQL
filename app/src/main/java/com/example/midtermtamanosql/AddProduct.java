@@ -34,7 +34,10 @@ public class AddProduct extends AppCompatActivity {
                     int productQty = Integer.parseInt(txtAddProductQty.getText().toString());
                     double productPrice = Double.parseDouble(txtAddProductPrice.getText().toString());
                     db.addProduct(productName,productDesc,productPrice,productQty);
-
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "Product Added!",
+                            Toast.LENGTH_SHORT);
+                    toast.show();
                     Intent intent = new Intent(AddProduct.this, ProductInformation.class);
                     startActivity(intent);
                     finish();
