@@ -77,7 +77,7 @@ public class ProductRecyclerAdapter extends RecyclerView.Adapter<ProductRecycler
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                                     //set what should happen when negative button is clicked
-                        Toast.makeText(itemView.getContext(),"Cancelled",Toast.LENGTH_LONG).show();
+                            Toast.makeText(itemView.getContext(),"Cancelled",Toast.LENGTH_LONG).show();
                         }
                     }).show();
                 }

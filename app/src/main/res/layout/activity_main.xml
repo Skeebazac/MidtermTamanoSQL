@@ -9,10 +9,26 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/clearData"
         android:layout_width="248dp"
         android:layout_height="131dp"
-        android:backgroundTint="@android:color/holo_red_dark"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#EB3B5B"
+        android:drawableTop="@drawable/clear_data_icon"
+        android:foregroundTint="#000000"
+        android:text="Clear Data"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/productImageButton" />
+
+    <Button
+        android:id="@+id/exitButton"
+        android:layout_width="248dp"
+        android:layout_height="131dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FD5C65"
         android:drawableTop="@drawable/exiticon"
         android:foregroundTint="#000000"
         android:text="EXIT"
@@ -21,15 +37,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productImageButton"
-        app:layout_constraintVertical_bias="0.186" />
+        app:layout_constraintTop_toBottomOf="@+id/clearData"
+        app:layout_constraintVertical_bias="0.086" />
 
     <Button
         android:id="@+id/productImageButton"
         android:layout_width="248dp"
         android:layout_height="131dp"
         android:layout_marginTop="44dp"
-        android:backgroundTint="#649EFF"
+        android:backgroundTint="#f8b732"
         android:drawableTop="@drawable/productinformation"
         android:foregroundTint="#000000"
         android:text="PRODUCT INFORMATION"
@@ -43,11 +59,13 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:fontFamily="serif"
-        android:text="Welcome"
+        android:layout_marginTop="64dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Product Information System"
+        android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

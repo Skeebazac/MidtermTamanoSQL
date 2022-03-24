@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#f8e4db"
     tools:context=".ViewProduct">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_width="366dp"
-        android:layout_height="602dp"
+        android:layout_width="371dp"
+        android:layout_height="633dp"
         android:layout_margin="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,10 +26,10 @@
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
-            android:layout_width="355dp"
-            android:layout_height="571dp"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="20dp">
 
 
             <TextView
@@ -163,7 +164,7 @@
                 android:layout_height="59dp"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="#0FB3D1"
-                android:text="Edit"
+                android:text="Modify"
                 app:layout_constraintTop_toBottomOf="@+id/editButton"
                 tools:layout_editor_absoluteX="98dp" />
 
@@ -176,7 +177,6 @@
                 android:text="CANCEL"
                 app:layout_constraintTop_toBottomOf="@+id/cancelButton"
                 tools:layout_editor_absoluteX="98dp" />
-
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
